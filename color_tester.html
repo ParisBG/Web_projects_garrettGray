@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/topNav.css">
+    <script src="js/colorTester0.js"></script>
+    <script src="js/top_nav_js.js"></script>
+
+
+    <title>RGB/Hexadecimal Color Tester</title>
+
+</head>
+
+<body>
+    
+<!-- Top Navigation Bar-->
+<div class="topNav" id="myTopnav">
+    <a class="active" href="color_tester.html"><span style="color: red">C</span>olor Tester</a>
+    <a href="calc.html">Calculator</a>
+    <a href="form_no_js.html">Business Form</a>
+    <a href="rando_bars.html">Graph Randomizer</a>
+    <a href="chart_creator.html">Graph Creator</a>
+    <a href="http://www.forever0.com/" target="_blank">Forever Zero!</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()"><i class="fa fa-bars"></i></a>
+
+    <div class="search-container">
+        <form action="javascript: alert('Under Construction');">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+</div>
+<br><br>
+
+    <div class="container">
+
+    <h1 class="display-3"><span style="color: red"><b>C</b></span><b>olor Tester</b></h1>
+    <br><br>
+
+    <div class="container">
+        <table class="table table-striped table-light table-bordered table-hover" id="myTable">
+            <thead>COLOR FORM</thead>
+            <tr>
+                <th></th>
+                <th>Color Format</th>
+                <th>Test Color</th>
+
+            </tr>
+            <tr id="row1">
+                <td>
+                        <div class="form-radio">
+                            <label for="radio1" class="form-radio-label">
+                            <input type="radio" id="radio1" name="myRadio" class="form-radio-input">RGB</label>
+                        </div>          
+                </td>
+                <td style="text-align: center;">
+                    Red<input type="number" id="inputRed"/>
+                    Green<input type="number" id="inputGreen"/>
+                    Blue<input type="number" id="inputBlue"/>
+                </td>
+                <td>
+                <svg id="circle1" width="100" height="100" xmnls="http://www.w3.org/2000/svg" version="1.1"></svg>
+
+                </td>
+
+            </tr>
+            <tr id="row2">
+                <td>
+                        <div class="form-radio">
+                            <label for="radio2" class="form-radio-label">
+                            <input type="radio" name="myRadio" id="radio2" class="form-radio-input">Hexadecimal</label>
+                        </div>          
+                </td>
+
+                <td><input type="text" id="inputHexa"/></td>
+                <td>
+                    <svg id="circle2" width="100" height="100" xmnls="http://www.w3.org/2000/svg" version="1.1"></svg>
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td>
+                        <div class="form-radio">
+                            <label for="radio3" class="form-radio-label">
+                            <input type="radio" name="myRadio" id="radio3" class="form-radio-input">Color Name</label>
+                        </div>          
+                </td>
+                <td><input type="text" id="inputColorName"/></td>
+                <td>
+                    <svg id="circle3" width="100" height="100" xmnls="http://www.w3.org/2000/svg" version="1.1"></svg>
+                </td>
+            </tr>
+
+            <tr> 
+                <td><button btn="submit" class="btn btn-danger" onClick="return renderCircle()">SUBMIT</button></td>
+                <td><button type="button" class="btn btn-info" onclick="return location.reload();">CLEAR ALL</button></td>
+                <td></td>
+            </tr>
+
+
+        </table>
+
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

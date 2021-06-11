@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="js/project4js.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/topNav.css">
+    <script src="js/top_nav_js.js"></script>
+
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        div.outset {
+          border-style: double;
+          font-family: "cursive";
+        }
+
+        input[type=number]{
+        width: 60px;
+        } 
+    </style>
+
+    <title>Chart Coding</title>
+
+</head>
+<body>
+    <!-- Top Navigation Bar-->
+<div class="topNav" id="myTopnav">
+    <a href="color_tester.html"><span style="color: red">C</span>olor Tester</a>
+    <a href="calc.html">Calculator</a>
+    <a href="form_no_js.html">Business Form</a>
+    <a href="rando_bars.html">Graph Randomizer</a>
+    <a class="active" href="chart_creator.html">Graph Creator</a>
+    <a href="http://www.forever0.com/" target="_blank">Forever Zero!</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="responsiveTopNav()"><i class="fa fa-bars"></i></a>
+
+    <div class="search-container">
+        <form action="javascript: alert('Under Construction');">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+</div>
+<br><br>
+
+    <div class="container outset">
+            <h1 style="text-align:center" class="display-5"><em>The following charts were generated using<b>JavaScript</b>,<b>Bootstrap</b>,<b>CSS</b>, and <b>HTML</b>.</em></h1>
+            <h1 style="text-align:center"><em><b><span style="color: lightseagreen">Created By: Paris G</span></em></b></h1>
+
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div id="topChart" class="container">
+        <table class="table table-striped table-dark table-bordered table-hover">
+            <tr>
+                <th style="text-align:center" colspan="5"><b>Quarterly Data for <span style="color: red">R</span><span style="color: green">G</span><span style="color: blue">B</span> Colors</b></th>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td><b>Q1</b></td>
+                <td><b>Q2</b></td>
+                <td><b>Q3</b></td>
+                <td><b>Q4</b></td>
+            </tr>
+            
+            <tr>
+                <td><b><span style="color: red">Red</b></td>
+                <td><input type="number" max="256" id="inputRedQ1"/></td>
+                <td><input type="number" max="256" id="inputRedQ2"/></td>
+                <td><input type="number" max="256" id="inputRedQ3"/></td>
+                <td><input type="number" max="256" id="inputRedQ4"/></td>
+            </tr>
+
+            <tr>
+                <td><b><span style="color: green">Green</b></td>
+                <td><input type="number" max="256" id="inputGreenQ1"/></td>
+                <td><input type="number" max="256" id="inputGreenQ2"/></td>
+                <td><input type="number" max="256" id="inputGreenQ3"/></td>
+                <td><input type="number" max="256" id="inputGreenQ4"/></td>
+            </tr>
+
+            <tr>
+                <td><b><span style="color: blue">Blue</b></td>
+                <td><input type="number" max="256" id="inputBlueQ1"/></td>
+                <td><input type="number" max="256" id="inputBlueQ2"/></td>
+                <td><input type="number" max="256" id="inputBlueQ3"/></td>
+                <td><input type="number" max="256" id="inputBlueQ4"/></td>
+            </tr>
+
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+
+        </table>
+
+        <div style="text-align:center">
+            <button type="button" class="btn btn-primary" onclick="return autoFill();">AUTO-FILL</button>            
+            <a href="#backToTopButton" type="button" class="btn btn-success" onclick="return createCharts();">SUBMIT</a>
+            <button type="button" class="btn btn-danger" onclick="return location.reload();">CLEAR ALL</button>
+        </div>
+
+    </div>
+
+    <br><br><br>
+
+    <br><br><br>
+    <div id="chartLabel" style="text-align:center" class="container"> </div>
+
+
+    <a id="myC" style="text-align:center" class="container-fluid mt-3">
+        
+        <div class="row">
+
+            <div style="text-align:center" id="lineChartDiv" class="col-md-6">
+                <svg id="svgCanvasLine" height="400" width="800" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+            </div>
+
+            <div style="text-align:center" id="barUpChartDiv" class="col-md-6">
+                <svg id="svgCanvasBarUp" height="400" width="800" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+            </div>
+        </div>
+
+            <div class="row">
+
+                    <div style="text-align:center" id="barRightChartDiv" class="col-md-6">
+                        <svg id="svgCanvasBarRight" height="400" width="800" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+                    </div>
+
+                    <div style="text-align:center" id="pieChartDiv" class="col-md-6">
+                        <svg id="svgCanvasPie" height="400" width="800" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+                    </div>
+                </div>
+                   
+
+            </a>
+
+            <div style="text-align:center" class="container">
+                <a id="backToTopButton" href="#topChart" type="button" class="btn btn-success">Back To Top</a>
+            </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
